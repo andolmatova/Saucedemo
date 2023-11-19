@@ -5,7 +5,8 @@ export default class InventoryPage {
 
   // Elements
   //-------------------------------------------------------
-
+  BURGER_MENU_BTN = '#react-burger-menu-btn';
+  
   // Actions
   //-------------------------------------------------------
   public async expectInventoryPageOpened() {
