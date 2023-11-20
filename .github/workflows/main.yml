@@ -18,7 +18,21 @@ jobs:
     - uses: actions/upload-artifact@master
       with:
         name: allure-results
-        path: allure-results  
+        path: allure-results
+    - name: Send telegram message on push
+      uses: appleboy/telegram-action@master
+      with:
+        to: -809053253
+        token: ${{ secrets.TG_TOKEN }}
+        photo: ./test.png
+        message: |
+          ${{ github.actor }} created commit:
+          Commit message: ${{ github.event.commits[0].message }}
+
+          Repository: ${{ github.repository }}
+
+          See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
     - name: Get Allure history
       uses: actions/checkout@v3
       if: always()
