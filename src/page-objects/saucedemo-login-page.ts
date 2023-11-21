@@ -5,6 +5,7 @@ export default class LoginPage {
 
   // Elements
   //-------------------------------------------------------
+
   USER_NAME_INPUT = '[data-test="username"]';
   PASSWORD_INPUT = '[data-test="password"]';
   LOGIN_BUTTON = '[data-test="login-button"]';
@@ -18,6 +19,7 @@ export default class LoginPage {
 
   // Actions
   //-------------------------------------------------------
+
   public async fillUsername(username: string) {
     await this.page.locator(this.USER_NAME_INPUT).fill(username);
   }
@@ -38,6 +40,7 @@ export default class LoginPage {
 
   // Asserts
   //-------------------------------------------------------
+
   public async expectTitleCorrect() {
     await expect(this.page).toHaveTitle(this.titleText);
   }
